@@ -99,8 +99,9 @@ def test_a_release_is_recorded_in_mlflow_when_a_tracking_server_is_set(world, tm
     m = train(small_training(world, cfg, scale=8), cfg, "relevance-mlflow")
     path = export_onnx(m, tmp_path / "art")
     assert log_release("v", 0, "initial", True, ["first model"], {}, {}) is None      # nothing without a server
-    monkeypatch.setenv("MLFLOW_TRACKING_URI", f"sqlite:///{tmp_path / 'mlflow.db'}")
-    monkeypatch.setenv("MLFLOW_ARTIFACT_LOCATION", str(tmp_path / "mlruns"))
+    # a local folder stands in for the Azure ML workspace's MLflow endpoint
+    monkeypatch.setenv("MLFLOW_ALLOW_FILE_STORE", "true")
+    monkeypatch.setenv("MLFLOW_TRACKING_URI", f"file://{tmp_path / 'mlruns'}")
     run_id = log_release(m.version, 0, "initial", True, ["first model"], {"labels": "floor"},
                          report(m, golden(world, 50)), path)
     assert run_id and any((tmp_path / "mlruns").rglob("*.onnx"))

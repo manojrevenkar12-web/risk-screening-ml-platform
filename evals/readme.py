@@ -201,6 +201,14 @@ def section(dev: dict[str, Any], held: dict[str, Any] | None) -> str:
                 "Six other languages missing from a later export, drift in Portuguese, an earlier retirement with a "
                 "successor that breaks the format more often, more spikes and throttling.", "",
                 table(head, [[h[n]["label"].split(":")[0]] + row_h(h[n]) for n in MAIN if n in h])]
+        hm = h["platform"]["migrations"]
+        if hm:
+            m = hm[0]
+            out += ["", f"LLM retirement on the held-out world: {m['retiring']} retires on day {m['retires_day']}; "
+                        f"on day {m['decided_day']} the platform found that "
+                        + ", ".join(f"{r['model']} {r['prompt']} parses {100 * r['format_ok']:.1f}%"
+                                    for r in m["results"][1:])
+                        + f". Decision: {m['note']}."]
         hb = h["platform"]["bad_promotion_detail"]
         if hb:
             out += ["", "Platform promotions that hurt a language on the held-out world: " + "; ".join(
