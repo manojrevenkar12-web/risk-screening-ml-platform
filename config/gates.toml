@@ -1,0 +1,42 @@
+# Release gates for the platform, judged on the worse end of a 95% interval where a rate is involved.
+[gates.worst_language_recall]
+metric = "worst_language_recall"
+direction = "min"
+threshold = 0.85
+why = "An incident in Thai or Swahili is as material to a client as one in English."
+
+[gates.missed_incidents]
+metric = "missed_incident_share"
+direction = "max"
+threshold = 0.08
+why = "Incidents the relevance filter drops never reach an analyst."
+
+[gates.bad_promotions]
+metric = "bad_promotions"
+direction = "max"
+threshold = 0
+why = "A model that is worse for any language must not reach production."
+
+[gates.sla]
+metric = "sla_breach_share"
+direction = "max"
+threshold = 0.01
+why = "Clients are alerted within hours; a backlog during a news spike breaks that promise."
+
+[gates.cost]
+metric = "eur_per_1k_documents"
+direction = "max"
+threshold = 0.10
+why = "Screening 2.5 million documents a day must stay within the compute and model budget."
+
+[gates.retirement]
+metric = "degraded_tagging_days"
+direction = "max"
+threshold = 0
+why = "A retired model version must never take tagging down or silently change its output."
+
+[gates.drift]
+metric = "drift_detection_days"
+direction = "max"
+threshold = 3
+why = "A new source that the model cannot read must be noticed within days."

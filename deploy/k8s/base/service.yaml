@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: relevance-scorer
+  namespace: screening
+spec:
+  # selects stable and canary pods alike: traffic splits by ready replicas
+  selector: {app: relevance-scorer}
+  ports:
+    - {name: http, port: 80, targetPort: http}

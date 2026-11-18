@@ -1,0 +1,98 @@
+# Product settings. The world never reads this file.
+
+[pipeline]
+sla_hours = 4.0                 # an incident should be tagged within this many hours of arriving
+start_day_of_week = 0           # day 0 is a Monday
+
+[filter]
+enabled = true                  # the relevance model decides what reaches the LLM
+
+[dedupe]
+enabled = true
+shingle = 1                     # word shingles for SimHash
+max_hamming = 11                # 64-bit SimHash distance at or below which two documents are one story (set on dev
+                                # seed 21: 91.5% of syndicated copies caught, 0.4% of different stories merged)
+
+[labels]
+budget_per_round = 36000        # analyst labels per training round (the cost that does not scale)
+allocation = "floor"            # proportional | floor
+min_per_language = 700          # floor for small languages
+enrich_relevant_share = 0.30    # for floored languages, analysts label model-flagged documents first
+golden_relevant = 600           # golden set per language: labelled incidents (half calibrates thresholds, half tests;
+                                # 300 per half lets the paired test see a 5-point drop in one language)
+golden_random = 600             # golden set per language: random documents
+topic_golden = 400              # documents with analyst topic tags, for LLM evaluation
+
+[model]
+C = 8.0
+min_df = 2
+max_iter = 3000
+
+[thresholds]
+mode = "per_language"           # global | per_language
+global = 0.5
+target_recall = 0.94            # per-language threshold chosen on the golden set to keep at least this recall (0.92 on
+                                # dev left 8.2% of incidents missed on the worst seed, over the 8% gate)
+min_threshold = 0.01
+
+[gate]
+mode = "per_language"           # aggregate | per_language
+aggregate_min_f1_gain = 0.0     # status quo: ship when aggregate F1 on the golden sets does not drop
+max_language_recall_drop = 0.02 # per language: a paired drop larger than this is tested for significance
+family_alpha = 0.05             # Holm-corrected across languages: the chance of holding a release that changed nothing
+min_language_recall = 0.85      # per language: fail when even the interval's upper end is under this
+max_harmless_pass_increase = 0.03 # volume-weighted share of harmless documents passed to the LLM may rise this much
+min_golden_incidents = 40       # fewer labelled incidents than this: no decision for that language, hold
+
+[retraining]
+schedule_days = [14, 42]        # scheduled retrains
+drift_retrain = true            # a drift alert triggers a targeted relabel and retrain
+window = "cumulative"           # cumulative (all labels so far) | latest (the latest export alone)
+data_contract = true            # check the label export against what was requested before training
+contract_min_share = 0.5        # a language with fewer than this share of its requested labels is a broken export
+
+[drift]
+enabled = true
+psi_alert = 0.2                 # population stability index of a language's score distribution vs reference
+mix_alert = 0.35                # relative change in a language's share of daily volume
+window_days = 2
+relabel = 1200                  # labels requested for a drifting language (enriched)
+sample = 150                    # documents per language per day scored for the drift check
+bins = [0.0, 0.05, 0.15, 0.35, 0.6, 0.85, 1.0000001]
+
+[scorer]
+# One replica = one pod with 4 vCPU on a D-series node running the in-house transformer (assumption: a distilled
+# multilingual encoder at 256 tokens; the ONNX stand-in in this repo is far faster, see evals/bench.py)
+docs_per_second_per_replica = 40
+eur_per_replica_hour = 0.19
+policy = "lag"                  # fixed_average | fixed_peak | lag
+min_replicas = 1
+max_replicas = 40
+target_lag_seconds = 120        # KEDA scales to keep the Event Hubs consumer lag under this
+scale_up_minutes = 3
+
+[llm]
+prompt = "v1"
+eur_per_1k_tokens = 0.0004      # pay-as-you-go for a small tagging model, input and output blended (assumption)
+ptu_eur_per_hour = 0.45         # one provisioned throughput unit (assumption; set to your contract)
+ptu_tokens_per_minute = 25000   # tokens per minute one unit serves for this model (assumption)
+capacity = "ptu_spillover"      # payg | ptu_peak | ptu_spillover
+ptu_units = 0                   # 0 = sized by the planner from the forecast
+# ptu_spillover buys the cost-optimal number of units for the forecast: a unit pays off for the hours its capacity
+# is used, so the base covers the demand level exceeded in more than (PTU price per token / PAYG price) of hours
+secondary_region = true         # spill to a second region when the primary throttles
+payg_tokens_per_hour_quota = 45_000_000   # the deployment's pay-as-you-go quota per region (750k tokens a minute)
+retry_backoff_minutes = 10
+
+[lifecycle]
+lead_days = 21                  # start the successor evaluation this many days before a retirement
+prompts = ["v1", "v2"]
+min_format_ok = 0.99            # share of answers that parse into the expected schema
+min_tag_accuracy_delta = -0.01  # successor may not tag worse than the current model by more than this
+mode = "gated_migration"        # auto_upgrade (the cloud's default at retirement) | gated_migration
+
+[teams]
+# Entra ID groups -> what each may call through the gateway
+"sg-ml-screening-prod" = { deployments = ["screening-tagger"], tokens_per_minute = 0, monthly_budget_eur = 0 }
+"sg-analyst-tools" = { deployments = ["analyst-assist"], tokens_per_minute = 60000, monthly_budget_eur = 4000 }
+"sg-ml-dev" = { deployments = ["sandbox"], tokens_per_minute = 20000, monthly_budget_eur = 800 }

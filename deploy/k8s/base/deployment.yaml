@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: relevance-scorer
+  namespace: screening
+  labels: {app: relevance-scorer, track: stable}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: relevance-scorer, track: stable}
+  template:
+    metadata:
+      labels: {app: relevance-scorer, track: stable, azure.workload.identity/use: "true"}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: /metrics
+    spec:
+      serviceAccountName: relevance-scorer
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: {type: RuntimeDefault}
+      tolerations:
+        - {key: workload, operator: Equal, value: scorer, effect: NoSchedule}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels: {app: relevance-scorer}
+      containers:
+        - name: scorer
+          image: relevance-scorer:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - {name: http, containerPort: 8080}
+          env:
+            - {name: MODEL_DIR, value: /models}
+            - {name: ORT_THREADS, value: "2"}
+          envFrom:
+            - configMapRef: {name: relevance-scorer}
+          resources:
+            requests: {cpu: "1", memory: 1Gi}
+            limits: {memory: 2Gi}
+          readinessProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}

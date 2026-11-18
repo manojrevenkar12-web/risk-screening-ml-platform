@@ -1,0 +1,8 @@
+.skeleton { display: grid; gap: var(--s3); padding: var(--s5) 0; }
+.skeleton span { display: block; height: 14px; border-radius: var(--radius);
+  background: linear-gradient(90deg, var(--rule), var(--sheet), var(--rule)); background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+.failed { border-left: 3px solid var(--risk); padding: var(--s3) var(--s4); display: grid; gap: var(--s2); }
+.empty { color: var(--muted); padding: var(--s4) 0; }
+.btn { justify-self: start; border: 1px solid var(--ink); background: transparent; padding: 5px 14px; border-radius: var(--radius); }

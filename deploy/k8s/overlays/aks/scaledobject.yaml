@@ -1,0 +1,40 @@
+# KEDA scales the scorer on the Event Hubs consumer lag of documents-unique (Kafka protocol, Entra ID auth through
+# workload identity). The platform's capacity simulation uses the same rule (screening/capacity/autoscale.py).
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: eventhubs-workload-identity
+  namespace: screening
+spec:
+  podIdentity:
+    provider: azure-workload
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: relevance-scorer
+  namespace: screening
+spec:
+  scaleTargetRef:
+    name: relevance-scorer
+  minReplicaCount: 1
+  maxReplicaCount: 40
+  pollingInterval: 15
+  cooldownPeriod: 300
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior:
+        scaleDown:
+          stabilizationWindowSeconds: 600
+  triggers:
+    - type: azure-eventhub
+      authenticationRef: {name: eventhubs-workload-identity}
+      metadata:
+        eventHubNamespace: evhns-rscreen-prod
+        eventHubName: documents-unique
+        consumerGroup: relevance-scorer
+        storageAccountName: strscreenprodlake
+        blobContainer: checkpoints
+        checkpointStrategy: blobMetadata
+        # 40 documents a second per pod for two minutes of lag
+        unprocessedEventThreshold: "4800"

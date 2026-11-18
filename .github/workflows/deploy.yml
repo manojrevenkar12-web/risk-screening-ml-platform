@@ -1,0 +1,48 @@
+# Manual deploy to an Azure subscription with OpenID Connect (no stored secrets). Not run by CI.
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: choice
+        options: [dev, staging, prod]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  plan-and-apply:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: hashicorp/setup-terraform@v3
+      - name: Terraform plan and apply
+        working-directory: infra/terraform
+        env:
+          ARM_USE_OIDC: "true"
+          ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+        run: |
+          terraform init -backend-config="key=${{ inputs.environment }}.tfstate" \
+            -backend-config="storage_account_name=${{ vars.TFSTATE_ACCOUNT }}" \
+            -backend-config="container_name=tfstate" -backend-config="resource_group_name=${{ vars.TFSTATE_RG }}" \
+            -backend-config="use_oidc=true"
+          terraform plan -out plan.tfplan -var "environment=${{ inputs.environment }}" \
+            -var "subscription_id=${{ vars.AZURE_SUBSCRIPTION_ID }}" -var "alert_email=${{ vars.ALERT_EMAIL }}"
+          terraform apply plan.tfplan
+      - name: Build, push and roll out the scorer (canary first)
+        run: |
+          pip install -r requirements.txt
+          PYTHONPATH=src:. python scripts/build_model.py artefacts
+          az acr build -r cr${{ vars.PREFIX }}${{ inputs.environment }} -t relevance-scorer:${{ github.sha }} .
+          az aks get-credentials -g rg-${{ vars.PREFIX }}-${{ inputs.environment }} -n aks-${{ vars.PREFIX }}-${{ inputs.environment }}
+          kubectl apply -k deploy/k8s/overlays/canary

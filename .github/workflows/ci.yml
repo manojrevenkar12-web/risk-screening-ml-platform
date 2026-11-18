@@ -1,0 +1,95 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src:.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Lint and types
+        run: |
+          ruff check src evals world tests scripts
+          mypy
+      - name: Tests (models, gate, ONNX parity, scorer API, a short platform run, operations)
+        run: pytest -q
+      - name: README results match the committed reports
+        run: python -m evals.readme --check
+
+  infrastructure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: Terraform format and validate
+        working-directory: infra/terraform
+        run: |
+          terraform fmt -check -recursive
+          terraform init -backend=false -input=false
+          terraform validate
+      - name: Kubernetes manifests against their schemas (KEDA from the CRD catalog)
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz | tar xz
+          for o in kind aks canary; do
+            kubectl kustomize deploy/k8s/overlays/$o > /tmp/$o.yaml
+            ./kubeconform -strict -summary -schema-location default \
+              -schema-location 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{.Group}}/{{.ResourceKind}}_{{.ResourceAPIVersion}}.json' \
+              /tmp/$o.yaml
+          done
+
+  scorer-on-kind:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: src:.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Train the day-0 model and export it to ONNX
+        run: python scripts/build_model.py artefacts
+      - name: Build the scorer image
+        run: docker build -t relevance-scorer:latest .
+      - uses: helm/kind-action@v1
+        with:
+          cluster_name: screening
+      - name: Deploy and score
+        run: |
+          kind load docker-image relevance-scorer:latest --name screening
+          kubectl apply -k deploy/k8s/overlays/kind
+          kubectl -n screening rollout status deploy/relevance-scorer --timeout=180s
+          kubectl -n screening port-forward svc/relevance-scorer 8080:80 &
+          sleep 5
+          curl -sf localhost:8080/healthz
+          curl -sf -X POST localhost:8080/score -H 'content-type: application/json' \
+            -d '{"language":"de","texts":["ein test","zwei"]}' | tee /tmp/score.json
+          python -c "import json; r=json.load(open('/tmp/score.json')); assert len(r['results'])==2, r"
+          curl -sf localhost:8080/metrics | grep screening_documents_scored_total
+
+  console:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build

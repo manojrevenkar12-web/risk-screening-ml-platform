@@ -1,0 +1,5 @@
+td.bad { color: var(--risk); font-weight: 600; }
+.chart { margin-top: var(--s5); display: grid; gap: var(--s2); max-width: 720px; }
+.key { display: inline-block; width: 18px; height: 3px; vertical-align: middle; margin: 0 4px 0 10px; }
+.key.steel { background: var(--steel); }
+.key.risk { background: var(--risk); }

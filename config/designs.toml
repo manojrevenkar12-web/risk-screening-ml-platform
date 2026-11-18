@@ -1,0 +1,69 @@
+# Designs compared on the same luck. Each overrides sections of config/platform.toml. Only evals/ reads this file.
+
+[status_quo]
+label = "Status quo: labels by volume, one threshold, aggregate gate, latest export, no drift watch, PAYG only, fixed scorer, cloud auto-upgrade"
+labels = { allocation = "proportional" }
+thresholds = { mode = "global" }
+gate = { mode = "aggregate" }
+retraining = { window = "latest", data_contract = false, drift_retrain = false }
+drift = { enabled = false }
+llm = { capacity = "payg", secondary_region = false }
+scorer = { policy = "fixed_average" }
+lifecycle = { mode = "auto_upgrade" }
+
+[llm_on_everything]
+label = "LLM on everything: no relevance filter, every deduplicated document is tagged"
+filter = { enabled = false }
+
+[platform]
+label = "Platform: floor labels, per-language thresholds and gate, data contract, drift retrain, PTU with spillover, lag scaling, gated migration"
+
+# Ablations: the platform with one part changed.
+[proportional_labels]
+label = "labels allocated by volume (no floor for small languages)"
+labels = { allocation = "proportional" }
+
+[global_threshold]
+label = "one threshold for every language"
+thresholds = { mode = "global" }
+
+[latest_window_no_contract]
+label = "retraining on the latest export alone, without the data contract"
+retraining = { window = "latest", data_contract = false }
+
+[latest_window_no_contract_aggregate_gate]
+label = "the same, and an aggregate gate instead of the per-language one"
+retraining = { window = "latest", data_contract = false }
+gate = { mode = "aggregate" }
+
+[no_drift_retrain]
+label = "drift alerts without a targeted retrain"
+retraining = { drift_retrain = false }
+
+[no_dedupe]
+label = "no near-duplicate removal"
+dedupe = { enabled = false }
+
+[payg_only]
+label = "pay-as-you-go only (no provisioned throughput)"
+llm = { capacity = "payg" }
+
+[ptu_peak]
+label = "provisioned throughput sized for the peak hour"
+llm = { capacity = "ptu_peak" }
+
+[no_secondary_region]
+label = "no second region for throttled calls"
+llm = { secondary_region = false }
+
+[fixed_scorer_average]
+label = "scorer replicas fixed at the average load"
+scorer = { policy = "fixed_average" }
+
+[fixed_scorer_peak]
+label = "scorer replicas fixed at the peak load"
+scorer = { policy = "fixed_peak" }
+
+[auto_upgrade]
+label = "letting the cloud upgrade the LLM at retirement"
+lifecycle = { mode = "auto_upgrade" }

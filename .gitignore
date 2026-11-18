@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+artefacts/
+mlruns/
+infra/terraform/.terraform/
+infra/terraform/.terraform.lock.hcl
+web/node_modules/
+web/dist/
+*.egg-info/
+.env

@@ -1,0 +1,49 @@
+# Held-out market: different failures, run once. Only world/ and evals/ read this file.
+name = "heldout"
+seed = 913
+days = 56
+documents_per_day = 2_500_000      # what the production pipeline sees daily
+sample_per_language = 1800         # labelled documents the world can provide per language for training and tests
+
+[languages]
+# share of daily volume; the long tail is where incidents go missing
+shares = { en = 0.36, de = 0.08, fr = 0.07, es = 0.07, zh = 0.06, ja = 0.04, pt = 0.04, it = 0.03, ru = 0.03, ko = 0.02, nl = 0.02, pl = 0.02, tr = 0.02, ar = 0.02, id = 0.015, vi = 0.015, sv = 0.01, cs = 0.01, el = 0.008, he = 0.008, hu = 0.008, ro = 0.008, th = 0.008, uk = 0.008, da = 0.006, fi = 0.006, no = 0.006, ms = 0.005, tl = 0.004, sw = 0.004 }
+families = { de = "germanic", nl = "germanic", sv = "germanic", da = "germanic", no = "germanic", en = "germanic", fr = "romance", es = "romance", it = "romance", pt = "romance", ro = "romance", ru = "slavic", pl = "slavic", cs = "slavic", uk = "slavic", zh = "cjk", ja = "cjk", ko = "cjk", ar = "semitic", he = "semitic", id = "austronesian", ms = "austronesian", tl = "austronesian", vi = "other", tr = "other", el = "other", hu = "other", fi = "other", th = "other", sw = "other" }
+family_overlap = 0.55              # share of a language's words it shares with its family
+
+[documents]
+relevant_share = 0.07              # documents that describe a risk incident
+duplicate_share = 0.30             # syndicated copies of another article, lightly edited
+hard_negative_share = 0.18         # risk words in a harmless sense ("strike a deal", "fine dining")
+label_noise = 0.03
+tokens = [30, 80]
+
+[traffic]
+weekday_factor = 1.0
+weekend_factor = 0.55
+hourly_peak = 1.8                  # midday factor over the night trough
+spikes_per_week = 2.5              # a major incident: volume x spike_size for a few hours
+spike_size = [3.0, 5.0]
+spike_hours = [3, 8]
+
+[data_feed]
+# analyst labels for the next training run arrive per language; this failure is hidden in the aggregate
+missing_languages_in_retrain = ["fi", "hu", "ms", "uk", "da", "cs"]
+retrain_day = 18
+
+[drift]
+# a large new source appears in one language with a different vocabulary
+day = 26
+language = "pt"
+volume_multiplier = 2.0
+new_vocabulary_share = 0.55
+
+[llm]
+# deployments the world serves; accuracies and behaviour are hidden truth
+catalog = [
+  { model = "gpt-tagger-2025-04", retires_day = 33, tag_accuracy = 0.93, format_ok = { v1 = 0.995, v2 = 0.995 } },
+  { model = "gpt-tagger-2026-02", retires_day = 400, tag_accuracy = 0.94, format_ok = { v1 = 0.74, v2 = 0.97 } },
+]
+tokens_per_document = [650, 1400]
+payg_regional_busy_hours = [9, 17]      # hours when pay-as-you-go capacity in the primary region is contended
+payg_throttle_when_busy = 0.25           # share of calls throttled (429) above the deployment's rate in busy hours

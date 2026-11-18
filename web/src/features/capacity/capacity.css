@@ -1,0 +1,8 @@
+.stack { display: inline-flex; width: 220px; height: 10px; background: var(--rule); vertical-align: middle; }
+.seg { display: inline-block; height: 10px; }
+.seg-scorer { background: var(--ink); }
+.seg-payg { background: var(--amber); }
+.seg-ptu { background: var(--steel); }
+.legend .seg { width: 14px; margin: 0 4px 0 12px; vertical-align: middle; }
+tr.me td { font-weight: 600; }
+td.bad { color: var(--risk); font-weight: 600; }

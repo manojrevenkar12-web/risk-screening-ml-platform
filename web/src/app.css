@@ -1,0 +1,8 @@
+.shell { min-height: 100vh; }
+.bar { display: flex; align-items: baseline; gap: var(--s5); padding: var(--s4) var(--s6); border-bottom: 1px solid var(--rule); }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); }
+.bar nav { display: flex; gap: var(--s4); }
+.bar a { color: var(--muted); text-decoration: none; padding-bottom: 4px; border-bottom: 2px solid transparent; }
+.bar a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+.main { padding: var(--s5) var(--s6) var(--s6); max-width: 1240px; }
+@media (max-width: 760px) { .bar { flex-wrap: wrap; padding: var(--s3); gap: var(--s3); } .bar nav { flex-wrap: wrap; } .main { padding: var(--s4); } }

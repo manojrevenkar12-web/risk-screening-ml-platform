@@ -1,0 +1,1580 @@
+{
+ "seeds": [
+  21,
+  22,
+  23
+ ],
+ "languages": [
+  {
+   "code": "en",
+   "share": 0.356788899900892,
+   "status_quo": 0.9796053974185067,
+   "platform": 0.9598329249498629
+  },
+  {
+   "code": "de",
+   "share": 0.07928642220019823,
+   "status_quo": 0.8751682518267335,
+   "platform": 0.9478160302394733
+  },
+  {
+   "code": "fr",
+   "share": 0.06937561942517345,
+   "status_quo": 0.8753690711483783,
+   "platform": 0.9579559907873761
+  },
+  {
+   "code": "es",
+   "share": 0.06937561942517345,
+   "status_quo": 0.8423572328067936,
+   "platform": 0.9446886173110451
+  },
+  {
+   "code": "zh",
+   "share": 0.05946481665014867,
+   "status_quo": 0.8037239770954155,
+   "platform": 0.9366238828004582
+  },
+  {
+   "code": "ja",
+   "share": 0.039643211100099114,
+   "status_quo": 0.7236246651342381,
+   "platform": 0.9468784832631364
+  },
+  {
+   "code": "pt",
+   "share": 0.039643211100099114,
+   "status_quo": 0.7702537760506067,
+   "platform": 0.9534523695694187
+  },
+  {
+   "code": "it",
+   "share": 0.029732408325074334,
+   "status_quo": 0.7404556490110088,
+   "platform": 0.9514024817073482
+  },
+  {
+   "code": "ru",
+   "share": 0.029732408325074334,
+   "status_quo": 0.589093775954682,
+   "platform": 0.9471678295860922
+  },
+  {
+   "code": "ko",
+   "share": 0.019821605550049557,
+   "status_quo": 0.6483324870009527,
+   "platform": 0.9524823742791456
+  },
+  {
+   "code": "nl",
+   "share": 0.019821605550049557,
+   "status_quo": 0.6019475606707021,
+   "platform": 0.9446146914549329
+  },
+  {
+   "code": "pl",
+   "share": 0.019821605550049557,
+   "status_quo": 0.5306456947147266,
+   "platform": 0.945423338038017
+  },
+  {
+   "code": "tr",
+   "share": 0.019821605550049557,
+   "status_quo": 0.37168194076289596,
+   "platform": 0.9442891234238955
+  },
+  {
+   "code": "ar",
+   "share": 0.019821605550049557,
+   "status_quo": 0.34138249794828934,
+   "platform": 0.9416886240265322
+  },
+  {
+   "code": "id",
+   "share": 0.014866204162537167,
+   "status_quo": 0.360258867432056,
+   "platform": 0.9395674824124821
+  },
+  {
+   "code": "vi",
+   "share": 0.014866204162537167,
+   "status_quo": 0.3106363568891995,
+   "platform": 0.943703312365941
+  },
+  {
+   "code": "sv",
+   "share": 0.009910802775024779,
+   "status_quo": 0.5287549211359311,
+   "platform": 0.9460489502800193
+  },
+  {
+   "code": "cs",
+   "share": 0.009910802775024779,
+   "status_quo": 0.3726471195462013,
+   "platform": 0.9693095835761394
+  },
+  {
+   "code": "el",
+   "share": 0.007928642220019823,
+   "status_quo": 0.4544909867403899,
+   "platform": 0.9455954197913524
+  },
+  {
+   "code": "he",
+   "share": 0.007928642220019823,
+   "status_quo": 0.465934695846382,
+   "platform": 0.9539962640770995
+  },
+  {
+   "code": "hu",
+   "share": 0.007928642220019823,
+   "status_quo": 0.15382745562244385,
+   "platform": 0.9519893091590154
+  },
+  {
+   "code": "ro",
+   "share": 0.007928642220019823,
+   "status_quo": 0.5207954909749125,
+   "platform": 0.9468512784793798
+  },
+  {
+   "code": "th",
+   "share": 0.007928642220019823,
+   "status_quo": 0.3730865342039344,
+   "platform": 0.951600019268149
+  },
+  {
+   "code": "uk",
+   "share": 0.007928642220019823,
+   "status_quo": 0.37422980097213365,
+   "platform": 0.9520466172857786
+  },
+  {
+   "code": "da",
+   "share": 0.005946481665014867,
+   "status_quo": 0.5753281906291975,
+   "platform": 0.9347915581165925
+  },
+  {
+   "code": "fi",
+   "share": 0.005946481665014867,
+   "status_quo": 0.19293861418195682,
+   "platform": 0.9525936306441573
+  },
+  {
+   "code": "no",
+   "share": 0.005946481665014867,
+   "status_quo": 0.43624662483420695,
+   "platform": 0.9519147668050385
+  },
+  {
+   "code": "ms",
+   "share": 0.004955401387512389,
+   "status_quo": 0.20519753253098375,
+   "platform": 0.9447721080850697
+  },
+  {
+   "code": "tl",
+   "share": 0.003964321110009912,
+   "status_quo": 0.269922588628805,
+   "platform": 0.9422235055734925
+  },
+  {
+   "code": "sw",
+   "share": 0.003964321110009912,
+   "status_quo": 0.22165912927377396,
+   "platform": 0.960201307809249
+  }
+ ],
+ "designs": {
+  "status_quo": {
+   "label": "Status quo: labels by volume, one threshold, aggregate gate, latest export, no drift watch, PAYG only, fixed scorer, cloud auto-upgrade",
+   "worst_language_recall": 0.11868134503398371,
+   "missed_incident_share": 0.22793378128215525,
+   "missed_incidents_per_day": 28714.063046832558,
+   "sla_breach_share": 0.059001545561840535,
+   "untagged_share": 0.05567000933272446,
+   "eur_per_day": 90.84820525435039,
+   "eur_per_1k_documents": 0.03677032463045,
+   "throttled_share": 0.0741548765107491,
+   "p95_delay_hours": 2.218840109798018,
+   "bad_promotions": 1.3333333333333333,
+   "drift_detection_days": null,
+   "ptu_units": 0.0,
+   "mean_replicas": 1.0,
+   "eur_split": {
+    "scorer": 4.559999999999954,
+    "payg": 86.28820525435044,
+    "ptu": 0.0
+   }
+  },
+  "llm_on_everything": {
+   "label": "LLM on everything: no relevance filter, every deduplicated document is tagged",
+   "worst_language_recall": 1.0,
+   "missed_incident_share": 0.003956819537833222,
+   "missed_incidents_per_day": 498.0702942332675,
+   "sla_breach_share": 0.06876366784666081,
+   "untagged_share": 0.007390367674762884,
+   "eur_per_day": 640.4759075470632,
+   "eur_per_1k_documents": 0.2588325624345395,
+   "throttled_share": 0.6087833801554764,
+   "p95_delay_hours": 2.8454530714166335,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 36.0,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 246.85805040420652,
+    "ptu": 388.79999999999956
+   }
+  },
+  "platform": {
+   "label": "Platform: floor labels, per-language thresholds and gate, data contract, drift retrain, PTU with spillover, lag scaling, gated migration",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007389299457796966,
+   "eur_per_day": 185.40360411684915,
+   "eur_per_1k_documents": 0.07478772694231378,
+   "throttled_share": 0.011528732227121308,
+   "p95_delay_hours": 0.16847063581250152,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 47.38574697399201,
+    "ptu": 133.20000000000002
+   }
+  },
+  "proportional_labels": {
+   "label": "labels allocated by volume (no floor for small languages)",
+   "worst_language_recall": 0.9122312667639852,
+   "missed_incident_share": 0.05061934379590342,
+   "missed_incidents_per_day": 6362.526554613123,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007398278132666918,
+   "eur_per_day": 201.73458538349067,
+   "eur_per_1k_documents": 0.08145294510373728,
+   "throttled_share": 0.016306279690079025,
+   "p95_delay_hours": 0.16848413464952697,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 13.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 52.91672824063371,
+    "ptu": 143.99999999999986
+   }
+  },
+  "global_threshold": {
+   "label": "one threshold for every language",
+   "worst_language_recall": 0.05833333333333343,
+   "missed_incident_share": 0.2317399137588061,
+   "missed_incidents_per_day": 29211.308810387854,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007387751786319438,
+   "eur_per_day": 86.65256610626146,
+   "eur_per_1k_documents": 0.03503302613483078,
+   "throttled_share": 0.0009083974286931111,
+   "p95_delay_hours": 0.16885097904632884,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 4.333333333333333,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 35.03470896340437,
+    "ptu": 46.79999999999999
+   }
+  },
+  "latest_window_no_contract": {
+   "label": "retraining on the latest export alone, without the data contract",
+   "worst_language_recall": 0.9141111796040438,
+   "missed_incident_share": 0.05209974988200594,
+   "missed_incidents_per_day": 6531.248901362432,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007391289793591223,
+   "eur_per_day": 228.65198920398134,
+   "eur_per_1k_documents": 0.0922516567532717,
+   "throttled_share": 0.03853779815010167,
+   "p95_delay_hours": 0.16998486717136932,
+   "bad_promotions": 0.6666666666666666,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 90.6341320611242,
+    "ptu": 133.20000000000002
+   }
+  },
+  "latest_window_no_contract_aggregate_gate": {
+   "label": "the same, and an aggregate gate instead of the per-language one",
+   "worst_language_recall": 0.9112144800603721,
+   "missed_incident_share": 0.05386787006944732,
+   "missed_incidents_per_day": 6762.125899172667,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007384332152395271,
+   "eur_per_day": 223.69976474204586,
+   "eur_per_1k_documents": 0.09031309448990166,
+   "throttled_share": 0.02832803795909958,
+   "p95_delay_hours": 0.16910638198382286,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 85.68190759918873,
+    "ptu": 133.20000000000002
+   }
+  },
+  "no_drift_retrain": {
+   "label": "drift alerts without a targeted retrain",
+   "worst_language_recall": 0.9044063281498959,
+   "missed_incident_share": 0.0524069375037042,
+   "missed_incidents_per_day": 6576.317326641231,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007387145085331707,
+   "eur_per_day": 182.82842564922157,
+   "eur_per_1k_documents": 0.0738051594348335,
+   "throttled_share": 0.012120440303298346,
+   "p95_delay_hours": 0.16840159627033782,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 44.81056850636444,
+    "ptu": 133.20000000000002
+   }
+  },
+  "no_dedupe": {
+   "label": "no near-duplicate removal",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.048061018750799385,
+   "missed_incidents_per_day": 8289.396273538014,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.0073892994577969716,
+   "eur_per_day": 253.16726496941138,
+   "eur_per_1k_documents": 0.10212112489551263,
+   "throttled_share": 0.05591295276909596,
+   "p95_delay_hours": 0.16975242250311798,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 17.0,
+   "mean_replicas": 1.0850694444444444,
+   "eur_split": {
+    "scorer": 4.947916666666618,
+    "payg": 64.61934830274474,
+    "ptu": 183.6
+   }
+  },
+  "payg_only": {
+   "label": "pay-as-you-go only (no provisioned throughput)",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007389299457796966,
+   "eur_per_day": 204.95610542653637,
+   "eur_per_1k_documents": 0.08265127084742001,
+   "throttled_share": 0.04815981040038767,
+   "p95_delay_hours": 0.1727222750491031,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 0.0,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 200.13824828367925,
+    "ptu": 0.0
+   }
+  },
+  "ptu_peak": {
+   "label": "provisioned throughput sized for the peak hour",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007389299457796966,
+   "eur_per_day": 557.7858490592439,
+   "eur_per_1k_documents": 0.2225868953847514,
+   "throttled_share": 4.305823307924167e-05,
+   "p95_delay_hours": 0.0,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 51.0,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 2.167991916386915,
+    "ptu": 550.7999999999998
+   }
+  },
+  "no_secondary_region": {
+   "label": "no second region for throttled calls",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.012844072271942147,
+   "untagged_share": 0.007389299457796966,
+   "eur_per_day": 185.32177228635874,
+   "eur_per_1k_documents": 0.07475539028775897,
+   "throttled_share": 0.20466376395112895,
+   "p95_delay_hours": 0.6597953559379098,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 47.30391514350163,
+    "ptu": 133.20000000000002
+   }
+  },
+  "fixed_scorer_average": {
+   "label": "scorer replicas fixed at the average load",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.054264492737216584,
+   "untagged_share": 0.007389299457796966,
+   "eur_per_day": 166.701666705666,
+   "eur_per_1k_documents": 0.06734929666581391,
+   "throttled_share": 0.00036279256848741233,
+   "p95_delay_hours": 2.079021819140658,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.0,
+   "eur_split": {
+    "scorer": 4.559999999999954,
+    "payg": 28.94166670566602,
+    "ptu": 133.20000000000002
+   }
+  },
+  "fixed_scorer_peak": {
+   "label": "scorer replicas fixed at the peak load",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.007389299457796966,
+   "eur_per_day": 192.20665031923565,
+   "eur_per_1k_documents": 0.07748367914733932,
+   "throttled_share": 0.0106219774443476,
+   "p95_delay_hours": 0.16847047554137673,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 2.6666666666666665,
+   "eur_split": {
+    "scorer": 12.159999999999878,
+    "payg": 46.84665031923573,
+    "ptu": 133.20000000000002
+   }
+  },
+  "auto_upgrade": {
+   "label": "letting the cloud upgrade the LLM at retirement",
+   "worst_language_recall": 0.9213405794034641,
+   "missed_incident_share": 0.05201783828863241,
+   "missed_incidents_per_day": 6525.0020073592195,
+   "sla_breach_share": 0.0,
+   "untagged_share": 0.05587951429978946,
+   "eur_per_day": 185.40360411684915,
+   "eur_per_1k_documents": 0.07478772694231378,
+   "throttled_share": 0.011528732227121308,
+   "p95_delay_hours": 0.16847063581250152,
+   "bad_promotions": 0.0,
+   "drift_detection_days": 0.0,
+   "ptu_units": 12.333333333333334,
+   "mean_replicas": 1.056547619047619,
+   "eur_split": {
+    "scorer": 4.817857142857094,
+    "payg": 47.38574697399201,
+    "ptu": 133.20000000000002
+   }
+  }
+ },
+ "releases": {
+  "platform": [
+   {
+    "day": 0,
+    "trigger": "initial",
+    "promoted": true,
+    "reason": "first model"
+   },
+   {
+    "day": 14,
+    "trigger": "schedule",
+    "promoted": true,
+    "reason": "every language holds its recall"
+   },
+   {
+    "day": 30,
+    "trigger": "drift in id",
+    "promoted": true,
+    "reason": "every language holds its recall"
+   },
+   {
+    "day": 42,
+    "trigger": "schedule",
+    "promoted": true,
+    "reason": "every language holds its recall"
+   }
+  ],
+  "status_quo": [
+   {
+    "day": 0,
+    "trigger": "initial",
+    "promoted": true,
+    "reason": "first model"
+   },
+   {
+    "day": 14,
+    "trigger": "schedule",
+    "promoted": true,
+    "reason": "aggregate F1 +0.013"
+   },
+   {
+    "day": 42,
+    "trigger": "schedule",
+    "promoted": true,
+    "reason": "aggregate F1 +0.002"
+   }
+  ]
+ },
+ "alerts": [
+  {
+   "day": 30,
+   "language": "id",
+   "reason": "share of volume 1.49% -> 4.33%"
+  }
+ ],
+ "breaches": [
+  {
+   "day": 14,
+   "languages": {
+    "el": [
+     0,
+     700
+    ],
+    "he": [
+     0,
+     700
+    ],
+    "th": [
+     0,
+     700
+    ],
+    "tl": [
+     0,
+     700
+    ],
+    "sw": [
+     0,
+     700
+    ]
+   },
+   "repaired": true
+  },
+  {
+   "day": 42,
+   "languages": {
+    "el": [
+     0,
+     700
+    ],
+    "he": [
+     0,
+     700
+    ],
+    "th": [
+     0,
+     700
+    ],
+    "tl": [
+     0,
+     700
+    ],
+    "sw": [
+     0,
+     700
+    ]
+   },
+   "repaired": true
+  }
+ ],
+ "bad_promotions": [
+  {
+   "day": 14,
+   "version": "relevance-d14-0a7a59c1",
+   "languages": {
+    "es": [
+     0.818,
+     0.762
+    ],
+    "pl": [
+     0.695,
+     0.502
+    ],
+    "id": [
+     0.378,
+     0.282
+    ],
+    "cs": [
+     0.568,
+     0.35
+    ],
+    "fi": [
+     0.13,
+     0.07
+    ],
+    "no": [
+     0.435,
+     0.37
+    ]
+   }
+  },
+  {
+   "day": 42,
+   "version": "relevance-d42-634effec",
+   "languages": {
+    "pt": [
+     0.765,
+     0.71
+    ],
+    "ru": [
+     0.613,
+     0.54
+    ],
+    "nl": [
+     0.625,
+     0.525
+    ],
+    "ar": [
+     0.43,
+     0.31
+    ],
+    "cs": [
+     0.35,
+     0.287
+    ],
+    "he": [
+     0.53,
+     0.335
+    ],
+    "hu": [
+     0.273,
+     0.125
+    ],
+    "ro": [
+     0.667,
+     0.588
+    ],
+    "ms": [
+     0.32,
+     0.217
+    ],
+    "tl": [
+     0.295,
+     0.233
+    ]
+   }
+  }
+ ],
+ "migration": {
+  "retiring": "gpt-tagger-2025-04",
+  "successor": "gpt-tagger-2026-02",
+  "decided_day": 17,
+  "retires_day": 38,
+  "prompt": "v2",
+  "escalated": false,
+  "note": "gpt-tagger-2026-02 with prompt v2",
+  "results": [
+   {
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 0.9975186104218362,
+    "tag_accuracy": 0.9203980099502488,
+    "tokens": 412958
+   },
+   {
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.8387096774193549,
+    "tag_accuracy": 0.9467455621301775,
+    "tokens": 415093
+   },
+   {
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 0.9925558312655087,
+    "tag_accuracy": 0.935,
+    "tokens": 409605
+   }
+  ]
+ },
+ "tagging": {
+  "platform": [
+   {
+    "day": 0,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 1,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 2,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 3,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 4,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 5,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 6,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 7,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 8,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 9,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 10,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 11,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 12,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 13,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 14,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 15,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 16,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 17,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 18,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 19,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 20,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 21,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 22,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 23,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 24,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 25,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 26,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 27,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 28,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 29,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 30,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 31,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 32,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 33,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 34,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 35,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 36,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 37,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 38,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 39,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 40,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 41,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 42,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 43,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 44,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 45,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 46,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 47,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 48,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 49,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 50,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 51,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 52,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 53,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 54,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   },
+   {
+    "day": 55,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v2",
+    "format_ok": 1.0,
+    "accuracy": 0.935
+   }
+  ],
+  "auto_upgrade": [
+   {
+    "day": 0,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 1,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 2,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 3,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 4,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 5,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 6,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 7,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 8,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 9,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 10,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 11,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 12,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 13,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 14,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 15,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 16,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 17,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 18,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 19,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 20,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 21,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 22,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 23,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 24,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 25,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 26,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 27,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 28,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 29,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 30,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 31,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 32,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 33,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 34,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 35,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 36,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 37,
+    "model": "gpt-tagger-2025-04",
+    "prompt": "v1",
+    "format_ok": 1.0,
+    "accuracy": 0.94
+   },
+   {
+    "day": 38,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 39,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 40,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 41,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 42,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 43,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 44,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 45,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 46,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 47,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 48,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 49,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 50,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 51,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 52,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 53,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 54,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   },
+   {
+    "day": 55,
+    "model": "gpt-tagger-2026-02",
+    "prompt": "v1",
+    "format_ok": 0.83,
+    "accuracy": 0.9518072289156626
+   }
+  ]
+ },
+ "gates": [
+  {
+   "gate": "worst_language_recall",
+   "metric": "worst_language_recall",
+   "direction": "min",
+   "threshold": 0.85,
+   "value": 0.9182211700279601,
+   "passed": true,
+   "why": "An incident in Thai or Swahili is as material to a client as one in English."
+  },
+  {
+   "gate": "missed_incidents",
+   "metric": "missed_incident_share",
+   "direction": "max",
+   "threshold": 0.08,
+   "value": 0.0595558912477047,
+   "passed": true,
+   "why": "Incidents the relevance filter drops never reach an analyst."
+  },
+  {
+   "gate": "bad_promotions",
+   "metric": "bad_promotions",
+   "direction": "max",
+   "threshold": 0,
+   "value": 0.0,
+   "passed": true,
+   "why": "A model that is worse for any language must not reach production."
+  },
+  {
+   "gate": "sla",
+   "metric": "sla_breach_share",
+   "direction": "max",
+   "threshold": 0.01,
+   "value": 0.0,
+   "passed": true,
+   "why": "Clients are alerted within hours; a backlog during a news spike breaks that promise."
+  },
+  {
+   "gate": "cost",
+   "metric": "eur_per_1k_documents",
+   "direction": "max",
+   "threshold": 0.1,
+   "value": 0.0818542648313513,
+   "passed": true,
+   "why": "Screening 2.5 million documents a day must stay within the compute and model budget."
+  },
+  {
+   "gate": "retirement",
+   "metric": "degraded_tagging_days",
+   "direction": "max",
+   "threshold": 0,
+   "value": 0.0,
+   "passed": true,
+   "why": "A retired model version must never take tagging down or silently change its output."
+  },
+  {
+   "gate": "drift",
+   "metric": "drift_detection_days",
+   "direction": "max",
+   "threshold": 3,
+   "value": 0.0,
+   "passed": true,
+   "why": "A new source that the model cannot read must be noticed within days."
+  }
+ ]
+}

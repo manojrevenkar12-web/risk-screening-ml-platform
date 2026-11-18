@@ -1,0 +1,37 @@
+# The candidate the gate promoted runs beside the stable track with one replica; the release pipeline watches its
+# error rate, latency and per-language pass rates on /metrics for an hour before scaling the stable track to it.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: relevance-scorer-canary
+  namespace: screening
+  labels: {app: relevance-scorer, track: canary}
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: relevance-scorer, track: canary}
+  template:
+    metadata:
+      labels: {app: relevance-scorer, track: canary, azure.workload.identity/use: "true"}
+    spec:
+      serviceAccountName: relevance-scorer
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: scorer
+          image: relevance-scorer:candidate
+          ports:
+            - {name: http, containerPort: 8080}
+          env:
+            - {name: MODEL_DIR, value: /models}
+          resources:
+            requests: {cpu: "1", memory: 1Gi}
+            limits: {memory: 2Gi}
+          readinessProbe:
+            httpGet: {path: /healthz, port: http}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
